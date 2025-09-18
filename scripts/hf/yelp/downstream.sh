@@ -1,20 +1,21 @@
 cls_batch_size=32
-result_folder="result/yelp/gpt2_stsb-roberta-base-v2/35000_n0_L7_initL7_var0_yelp_rephrase_tone_rank_len64var0_t1.4"
-
-
+result_folder="/content/drive/MyDrive/SecPE/yelp_huggingface_mugdp_10p-000000005"
+file_name="000000005.csv"
 
 ### calculate acc 
+# bash scripts/hf/yelp/downstream.sh
 num_train_epochs=5
-for seed in 0 1 2 
+for seed in 3
 do
-for label in "label2" "label1"
+for label in "label1" "label2"
 do
-for  (( iter=epochs; iter>=0; iter-- ))
+for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
-train_file=${result_folder}/${iter}/samples.csv
+train_file="${result_folder}/${file_name}"
 if [ -e "$train_file" ]; then
     echo "$train_file does exist."
-    output_dir=${result_folder}/${iter}/${label}_clean_ep${num_train_epochs}_seed${seed}/
+
+    output_dir=${result_folder}/${label}_clean_ep${num_train_epochs}_seed${seed}_${file_name%_prefixed.csv}/
     if [ -e "${output_dir}test_${num_train_epochs}.0_results.json" ]; then
         echo "${output_dir}test_${num_train_epochs}.0_results.json  does exist. -- SKIP running classification"
     else
@@ -38,4 +39,3 @@ fi
 done
 done
 done
-
