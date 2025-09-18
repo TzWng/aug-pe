@@ -1,6 +1,6 @@
 cls_batch_size=32
-result_folder="/content/drive/MyDrive/SecPE/yelp_huggingface_mugdp_10p-000000005"
-file_name="000000005.csv"
+result_folder="/content/drive/MyDrive/SecPE/synthetic_text"
+file_name="augpe_infty.csv"
 
 ### calculate acc 
 # bash scripts/hf/yelp/downstream.sh
