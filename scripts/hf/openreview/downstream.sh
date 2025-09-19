@@ -1,15 +1,14 @@
 cls_batch_size=32
-result_folder="/content/drive/MyDrive/SecPE/synthetic_text/yelp_gpt2"
-file_name="cluster800_50p_prefixed.csv"
+result_folder="/content/drive/MyDrive/SecPE/synthetic_text/openreview_gpt2"
+file_name="cluster15_2p_prefixed.csv"
 
 
-num_train_epochs=10
+num_train_epochs=8
 max_seq_length=512
 model="roberta-base"
 min_token_threshold=100
 item=${result_folder}
-method="augpe"
-rp="infty"
+
 
 ## calculate acc 
 for seed in 3
