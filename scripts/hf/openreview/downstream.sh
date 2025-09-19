@@ -3,7 +3,7 @@ result_folder="/content/drive/MyDrive/SecPE/synthetic_text/openreview_gpt2"
 file_name="cluster20_2p_prefixed.csv"
 
 
-num_train_epochs=10
+num_train_epochs=8
 max_seq_length=512
 model="roberta-base"
 min_token_threshold=100
