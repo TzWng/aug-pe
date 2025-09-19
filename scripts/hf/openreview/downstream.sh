@@ -1,5 +1,7 @@
 cls_batch_size=32
-result_folder="/mnt/bn/ssda/aug-pe/result"
+result_folder="/content/drive/MyDrive/SecPE/synthetic_text/yelp_gpt2"
+file_name="cluster800_50p_prefixed.csv"
+
 
 num_train_epochs=10
 max_seq_length=512
@@ -16,7 +18,7 @@ for label in "label2"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
-train_file="${item}/${method}_${rp}_prefixed.csv"
+train_file="${result_folder}/${file_name}"
 echo $train_file
 if [ -e "$train_file" ]; then
     echo "$train_file does exist."
