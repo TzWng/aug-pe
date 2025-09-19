@@ -21,7 +21,7 @@ train_file="${result_folder}/${file_name}"
 echo $train_file
 if [ -e "$train_file" ]; then
     echo "$train_file does exist."
-    output_dir=${item}/${label}_ep${num_train_epochs}_seed${seed}_${method}_${rp}/
+    output_dir=output_dir=${result_folder}/${label}_seed${seed}_${file_name%_prefixed.csv}/
     if [ -e "${output_dir}test_${iter}.0_results.json" ]; then
         echo "${output_dir}test_${iter}.0_results.json  does exist. -- SKIP running classification"
     else
