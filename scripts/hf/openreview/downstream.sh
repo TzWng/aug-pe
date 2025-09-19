@@ -8,7 +8,7 @@ model="roberta-base"
 min_token_threshold=100
 item=${result_folder}
 
-
+# "augpe_infty_prefixed.csv" "cluster15_infty_prefixed.csv" "cluster20_infty_prefixed.csv" "cluster25_infty_prefixed.csv"
 ## calculate acc 
 for seed in 3
 do
@@ -16,7 +16,7 @@ for label in "label2"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
-for file_name in "augpe_infty_prefixed.csv" "cluster15_infty_prefixed.csv" "cluster20_infty_prefixed.csv" "cluster25_infty_prefixed.csv"
+for file_name in "cluster25_2p_prefixed.csv"
 do
 train_file="${result_folder}/${file_name}"
 echo $train_file
