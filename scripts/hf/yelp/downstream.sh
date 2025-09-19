@@ -1,22 +1,24 @@
 cls_batch_size=32
-result_folder="/content/drive/MyDrive/SecPE/synthetic_text/yelp_qwen7b"
+result_folder="/content/drive/MyDrive/SecPE/synthetic_text"
 
 ### calculate acc 
 # bash scripts/hf/yelp/downstream.sh
-num_train_epochs=5
-for seed in 1
+num_train_epochs=8
+for seed in 3
 do
-for label in "label1" "label2"
+for label in "label2"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
 for file_name in "cluster600_0p_prefixed.csv" "cluster600_10p_prefixed.csv"
 do
-train_file="${result_folder}/${file_name}"
+for folder in "yelp_qwen7b" "yelp_gpt4" "yelp_mistral" "yelp_llama"
+do
+train_file="${result_folder}/${folder}/${file_name}"
 if [ -e "$train_file" ]; then
     echo "$train_file does exist."
 
-    output_dir=${result_folder}/${label}_seed${seed}_${file_name%_prefixed.csv}/
+    output_dir=${result_folder}/${folder}/${label}_seed${seed}_${file_name%_prefixed.csv}/
     if [ -e "${output_dir}test_${num_train_epochs}.0_results.json" ]; then
         echo "${output_dir}test_${num_train_epochs}.0_results.json  does exist. -- SKIP running classification"
     else
