@@ -1,6 +1,6 @@
 cls_batch_size=32
 result_folder="/content/drive/MyDrive/SecPE/synthetic_text/yelp_gpt2"
-file_name="cluster600_50p_prefixed.csv"
+file_name="cluster600_infty_prefixed.csv"
 
 ### calculate acc 
 # bash scripts/hf/yelp/downstream.sh
