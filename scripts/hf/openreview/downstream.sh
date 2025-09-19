@@ -1,6 +1,5 @@
 cls_batch_size=32
 result_folder="/content/drive/MyDrive/SecPE/synthetic_text/openreview_gpt2"
-file_name="augpe_2p_prefixed.csv"
 
 
 num_train_epochs=10
@@ -16,6 +15,8 @@ do
 for label in "label2"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
+do
+for file_name in "augpe_10p_prefixed.csv" "cluster15_10p_prefixed.csv" "cluster20_10p_prefixed.csv" "cluster25_10p_prefixed.csv"
 do
 train_file="${result_folder}/${file_name}"
 echo $train_file
@@ -48,3 +49,5 @@ fi
 done
 done
 done
+done
+
