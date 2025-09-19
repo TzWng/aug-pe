@@ -1,6 +1,6 @@
 cls_batch_size=32
 result_folder="/content/drive/MyDrive/SecPE/synthetic_text/openreview_gpt2"
-file_name="augpe15_2p_prefixed.csv"
+file_name="augpe_2p_prefixed.csv"
 
 
 num_train_epochs=8
