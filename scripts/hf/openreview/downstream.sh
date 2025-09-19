@@ -1,28 +1,30 @@
 cls_batch_size=32
-result_folder="result/iclr/gpt2_stsb-roberta-base-v2/14000_n0_L7_initL7_var0_openreview_rephrase_tone_rank_len448var0_t1.2"
+result_folder="/mnt/bn/ssda/aug-pe/result"
 
 num_train_epochs=10
 max_seq_length=512
 model="roberta-base"
 min_token_threshold=100
 item=${result_folder}
+method="augpe"
+rp="infty"
 
 ## calculate acc 
-for seed in 0 1 2 
+for seed in 3
 do
-for label in "label2" "label1"
+for label in "label2"
 do
-for  (( iter=epochs; iter>=0; iter-- ))
+for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
-train_file="${item}/${iter}/samples.csv"
+train_file="${item}/${method}_${rp}_prefixed.csv"
 echo $train_file
 if [ -e "$train_file" ]; then
     echo "$train_file does exist."
-    output_dir=${item}/${iter}/${label}_ep${num_train_epochs}_${model}_seq${max_seq_length}_seed${seed}/
-    if [ -e "${output_dir}test_${num_train_epochs}.0_results.json" ]; then
-        echo "${output_dir}test_${num_train_epochs}.0_results.json  does exist. -- SKIP running classification"
+    output_dir=${item}/${label}_ep${num_train_epochs}_seed${seed}_${method}_${rp}/
+    if [ -e "${output_dir}test_${iter}.0_results.json" ]; then
+        echo "${output_dir}test_${iter}.0_results.json  does exist. -- SKIP running classification"
     else
-        echo "${output_dir}test_${num_train_epochs}.0_results.json  does not exist. -- RUN running classification"
+        echo "${output_dir}test_${iter}.0_results.json  does not exist. -- RUN running classification"
         python utility_eval/run_classification.py \
             --report_to none --clean_dataset  --min_token_threshold ${min_token_threshold} \
             --model_name_or_path  ${model} \
@@ -31,7 +33,7 @@ if [ -e "$train_file" ]; then
             --validation_file data/openreview/iclr23_reviews_val.csv \
             --test_file data/openreview/iclr23_reviews_test.csv \
             --do_train --do_eval --do_predict --max_seq_length ${max_seq_length} --per_device_train_batch_size ${cls_batch_size} --per_device_eval_batch_size ${cls_batch_size} \
-            --learning_rate 3e-5 --num_train_epochs ${num_train_epochs} \
+            --learning_rate 3e-5 --num_train_epochs ${iter} \
             --overwrite_output_dir --overwrite_cache \
             --save_strategy epoch --save_total_limit 1 --load_best_model_at_end \
             --logging_strategy epoch \
@@ -45,5 +47,3 @@ fi
 done
 done
 done
-
-
