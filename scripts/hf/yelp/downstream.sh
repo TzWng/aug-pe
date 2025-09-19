@@ -1,5 +1,5 @@
 cls_batch_size=32
-result_folder="/content/drive/MyDrive/SecPE/synthetic_text/yelp_qwen7b"
+result_folder="/content/drive/MyDrive/SecPE/synthetic_text/yelp_llama"
 
 ### calculate acc 
 # bash scripts/hf/yelp/downstream.sh
