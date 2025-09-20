@@ -3,7 +3,7 @@ result_folder="/content/drive/MyDrive/SecPE/synthetic_text"
 
 ### calculate acc 
 # bash scripts/hf/yelp/downstream.sh
-num_train_epochs=10
+num_train_epochs=5
 for seed in 3
 do
 for label in "label1"
