@@ -2,7 +2,7 @@ cls_batch_size=32
 result_folder="/content/drive/MyDrive/SecPE/synthetic_text/openreview_gpt2"
 
 
-num_train_epochs=5
+num_train_epochs=10
 max_seq_length=512
 model="roberta-base"
 min_token_threshold=100
