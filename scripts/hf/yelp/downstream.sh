@@ -4,13 +4,13 @@ result_folder="/content/drive/MyDrive/SecPE/synthetic_text"
 ### calculate acc 
 # bash scripts/hf/yelp/downstream.sh
 num_train_epochs=5
-for seed in 43 44 7 8 9 10  
+for seed in 42 0  
 do
 for label in "label2"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
-for file_name in "cluster600_0p_prefixed.csv"
+for file_name in "cluster600_10p_prefixed.csv"
 do
 for folder in "yelp_mistral"
 do
