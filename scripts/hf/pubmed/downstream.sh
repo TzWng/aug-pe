@@ -1,4 +1,4 @@
-result_folder="/content/drive/MyDrive/SecPE/pubmed_train/augpe_2p/new"
+result_folder="/content/drive/MyDrive/SecPE/pubmed_secpe/checkpoint/new"
 
 export WANDB_DISABLED="true"
 
@@ -8,7 +8,7 @@ batch_size=32
 min_token_threshold=50
 lr=3e-4
 wd=0.01
-cluster="augpe"
+cluster="cluster2000"
 rp="2p"
 item=${result_folder}
 
