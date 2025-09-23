@@ -8,7 +8,7 @@ batch_size=32
 min_token_threshold=50
 lr=3e-4
 wd=0.01
-cluster="cluster3000"
+cluster="cluster4000"
 rp="2p"
 item=${result_folder}
 
