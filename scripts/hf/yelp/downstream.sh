@@ -1,5 +1,5 @@
 cls_batch_size=32
-result_folder="/content/drive/MyDrive/SecPE/synthetic_text"
+result_folder="/content/drive/MyDrive/SecPE/results-yelp-random-all"
 
 ### calculate acc 
 # bash scripts/hf/yelp/downstream.sh
@@ -10,9 +10,9 @@ for label in "label2"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
-for file_name in "cluster600_2p_prefixed.csv" "cluster600_10p_prefixed.csv"
+for file_name in "qwen_600_0.csv"
 do
-for folder in "yelp_gpt2"
+for folder in "qwen_600_2" "qwen_600_2"
 do
 train_file="${result_folder}/${folder}/${file_name}"
 if [ -e "$train_file" ]; then
