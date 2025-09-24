@@ -16,7 +16,7 @@ for label in "label2"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
-for file_name in "cluster25_10p_prefixed.csv"
+for file_name in "augpe_10p_prefixed.csv"
 do
 train_file="${result_folder}/${file_name}"
 echo $train_file
