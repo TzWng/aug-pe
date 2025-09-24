@@ -10,9 +10,9 @@ for label in "label2"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
-for file_name in "qwen_600_0.csv"
+for file_name in "train.csv"
 do
-for folder in "qwen_600_2" "qwen_600_2"
+for folder in "qwen_800_10" "qwen_800_50" "qwen_600_0"
 do
 train_file="${result_folder}/${folder}/${file_name}"
 if [ -e "$train_file" ]; then
