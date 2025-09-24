@@ -12,7 +12,7 @@ for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
 for file_name in "augpe_infty_prefixed.csv"
 do
-for folder in "yelp_gpt_2"
+for folder in "yelp_gpt2"
 do
 train_file="${result_folder}/${folder}/${file_name}"
 if [ -e "$train_file" ]; then
