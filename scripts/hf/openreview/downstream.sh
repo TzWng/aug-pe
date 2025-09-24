@@ -10,7 +10,7 @@ item=${result_folder}
 
 # "augpe_infty_prefixed.csv" "cluster15_infty_prefixed.csv" "cluster20_infty_prefixed.csv" "cluster25_infty_prefixed.csv"
 ## calculate acc 
-for seed in 6 7 8
+for seed in 4 9 7
 do
 for label in "label1"
 do
