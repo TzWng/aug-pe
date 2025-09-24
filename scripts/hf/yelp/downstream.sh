@@ -4,15 +4,15 @@ result_folder="/content/drive/MyDrive/SecPE/results-yelp-random-all"
 ### calculate acc 
 # bash scripts/hf/yelp/downstream.sh
 num_train_epochs=5
-for seed in 4 6 8
+for seed in 1 42 4 6 8
 do
 for label in "label2"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
-for file_name in "qwen_augpe_0.csv"
+for file_name in "qwen_600_0.csv"
 do
-for folder in "qwen_augpe_0"
+for folder in "qwen_600_0"
 do
 train_file="${result_folder}/${folder}/${file_name}"
 if [ -e "$train_file" ]; then
