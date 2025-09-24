@@ -1,5 +1,5 @@
 cls_batch_size=32
-result_folder="/content/drive/MyDrive/SecPE/synthetic_text/openreview_gpt2"
+result_folder="/content/drive/MyDrive/SecPE/synthetic_text/openreview_qwen1.5b"
 
 
 num_train_epochs=10
@@ -10,7 +10,7 @@ item=${result_folder}
 
 # "augpe_infty_prefixed.csv" "cluster15_infty_prefixed.csv" "cluster20_infty_prefixed.csv" "cluster25_infty_prefixed.csv"
 ## calculate acc 
-for seed in 4 6 0 1
+for seed in 42 0 1
 do
 for label in "label2"
 do
