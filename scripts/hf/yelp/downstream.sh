@@ -10,7 +10,7 @@ for label in "label1"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
-for file_name in "train.csv"
+for file_name in "qwen_augpe_2.csv"
 do
 for folder in "qwen_augpe_2"
 do
