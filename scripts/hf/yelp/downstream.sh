@@ -4,9 +4,9 @@ result_folder="/content/drive/MyDrive/SecPE/results-yelp-random-all"
 ### calculate acc 
 # bash scripts/hf/yelp/downstream.sh
 num_train_epochs=5
-for seed in 0 1 2
+for seed in 4 6 8
 do
-for label in "label1"
+for label in "label2"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
