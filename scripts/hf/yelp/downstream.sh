@@ -12,7 +12,7 @@ for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
 for file_name in "train.csv"
 do
-for folder in "qwen_800_10" "qwen_800_50" "qwen_800_0"
+for folder in "qwen_800_0" "qwen_800_50"
 do
 train_file="${result_folder}/${folder}/${file_name}"
 if [ -e "$train_file" ]; then
