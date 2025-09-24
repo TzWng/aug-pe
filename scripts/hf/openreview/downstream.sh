@@ -1,5 +1,5 @@
 cls_batch_size=32
-result_folder="/content/drive/MyDrive/SecPE/synthetic_text/openreview_qwen1.5b"
+result_folder="/content/drive/MyDrive/SecPE/synthetic_text/openreview_gpt2"
 
 
 num_train_epochs=10
