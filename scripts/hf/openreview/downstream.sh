@@ -12,7 +12,7 @@ item=${result_folder}
 ## calculate acc 
 for seed in 42 666 777
 do
-for label in "label2"
+for label in "label1"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
