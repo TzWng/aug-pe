@@ -14,7 +14,7 @@ for privacy in 0 2 10 50
 do
 for method in "mugdp"
 do
-train_file="${result_folder}/yelp_huggingface_gpt2_secpe_${privacy}_600_random_5000_20_000000020.csv"
+train_file="${result_folder}/${method}_${privacy}_prefixed.csv"
 if [ -e "$train_file" ]; then
     echo "$train_file does exist."
 
