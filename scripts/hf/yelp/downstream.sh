@@ -1,8 +1,6 @@
 cls_batch_size=32
 result_folder="/content/drive/MyDrive/SecPE/yelp_epoc20"
 
-yelp_huggingface_gpt2_mugdp_0_0_random_5000_20_000000020
-
 ### calculate acc 
 # bash scripts/hf/yelp/downstream.sh
 num_train_epochs=5
@@ -16,7 +14,7 @@ for privacy in 0 2 10 50
 do
 for method in "mugdp"
 do
-train_file="${result_folder}/yelp_huggingface_gpt2_mugdp_${privacy}_0_random_5000_20_000000020.csv"
+train_file="${result_folder}/yelp_huggingface_gpt2_secpe_${privacy}_600_random_5000_20_000000020.csv"
 if [ -e "$train_file" ]; then
     echo "$train_file does exist."
 
