@@ -10,9 +10,9 @@ for label in "label1" "label2"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
-for privacy in 0 2 10 50
+for privacy in 2 10 50
 do
-for method in "augpe"
+for method in "mugdp"
 do
 train_file="${result_folder}/${method}_${privacy}_prefixed.csv"
 if [ -e "$train_file" ]; then
