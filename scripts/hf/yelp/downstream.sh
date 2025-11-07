@@ -1,18 +1,18 @@
 cls_batch_size=32
-result_folder="/content/drive/MyDrive/SecPE/yelp_epoc20"
+result_folder="/content/drive/MyDrive/SecPE/yelp_pii_diff"
 
 ### calculate acc 
 # bash scripts/hf/yelp/downstream.sh
 num_train_epochs=5
 for seed in 3
 do
-for label in "label2"
+for label in "label2" "label1"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
-for privacy in 50
+for privacy in 10
 do
-for method in "secpe600"
+for method in "secpe600" "mugdp"
 do
 train_file="${result_folder}/${method}_${privacy}_prefixed.csv"
 if [ -e "$train_file" ]; then
