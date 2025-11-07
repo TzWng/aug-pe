@@ -54,6 +54,7 @@ check_min_version("4.18.0")
 from transformers import TrainerCallback
 from copy import deepcopy
 # from transformers.trainer_utils import TrainerState, TrainerControl
+from transformers.utils import logging as hf_logging
 
 require_version("datasets>=1.8.0", "To fix: pip install -r examples/pytorch/text-classification/requirements.txt")
 
@@ -692,7 +693,9 @@ def main():
             combined = {}
 
         for eval_dataset, task in zip(eval_datasets, tasks):
+            hf_logging.disable_progress_bar()
             metrics = trainer.evaluate(eval_dataset=eval_dataset)
+            hf_logging.enable_progress_bar()
 
             max_eval_samples = (
                 data_args.max_eval_samples if data_args.max_eval_samples is not None else len(eval_dataset)
@@ -718,7 +721,9 @@ def main():
             predict_datasets.append(raw_datasets["test_mismatched"])
 
         for predict_dataset, task in zip(predict_datasets, tasks):
+            hf_logging.enable_progress_bar()
             metrics = trainer.evaluate(eval_dataset=predict_dataset)
+            hf_logging.enable_progress_bar()
             trainer.log_metrics("test", metrics)
             trainer.save_metrics("test", combined if task is not None and "mnli" in task else metrics)
 
