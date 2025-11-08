@@ -6,11 +6,11 @@ result_folder="/content/drive/MyDrive/SecPE/yelp_pii_diff"
 num_train_epochs=5
 for seed in 3
 do
-for label in "label2" "label1"
+for label in "label2"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
-for privacy in 2 10 50
+for privacy in 2
 do
 for method in "secpe600"
 do
