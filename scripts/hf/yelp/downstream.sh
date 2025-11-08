@@ -10,7 +10,7 @@ for label in "label2" "label1"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
-for privacy in 10
+for privacy in 2 10 50
 do
 for method in "secpe600"
 do
