@@ -10,15 +10,15 @@ for label in "label1"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
-for privacy in 10
+for privacy in 2 10 50
 do
 for method in "secpe600"
 do
-train_file="${result_folder}/${method}_${privacy}_prefixed.csv"
+train_file="${result_folder}/${method}_new_${privacy}_prefixed.csv"
 if [ -e "$train_file" ]; then
     echo "$train_file does exist."
 
-    output_dir=${result_folder}/downstream/${label}_seed${seed}_${method}_${privacy}p/
+    output_dir=${result_folder}/downstream_new/${label}_seed${seed}_${method}_${privacy}p/
     if [ -e "${output_dir}test_${num_train_epochs}.0_results.json" ]; then
         echo "${output_dir}test_${num_train_epochs}.0_results.json  does exist. -- SKIP running classification"
     else
