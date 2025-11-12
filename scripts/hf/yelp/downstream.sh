@@ -4,9 +4,9 @@ result_folder="/content/drive/MyDrive/SecPE/yelp_pii_diff"
 ### calculate acc 
 # bash scripts/hf/yelp/downstream.sh
 num_train_epochs=5
-for seed in 1
+for seed in 1 0 2
 do
-for label in "label1"
+for label in "label1" "label2"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
