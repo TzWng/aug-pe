@@ -4,7 +4,7 @@ result_folder="/content/drive/MyDrive/SecPE/yelp_pii_diff"
 ### calculate acc 
 # bash scripts/hf/yelp/downstream.sh
 num_train_epochs=5
-for seed in 1 0 2
+for seed in 2 3
 do
 for label in "label1" "label2"
 do
@@ -14,7 +14,7 @@ for privacy in 2 10 50
 do
 for method in "secpe600"
 do
-train_file="${result_folder}/${method}_new_${privacy}_prefixed.csv"
+train_file="${result_folder}/ep05_${method}_new_${privacy}_prefixed.csv"
 if [ -e "$train_file" ]; then
     echo "$train_file does exist."
 
