@@ -4,7 +4,7 @@ result_folder="/content/drive/MyDrive/SecPE/yelp_pii_diff"
 ### calculate acc 
 # bash scripts/hf/yelp/downstream.sh
 num_train_epochs=5
-for seed in 3 0 1
+for seed in 0 1 2 3
 do
 for label in "label1" "label2"
 do
@@ -14,11 +14,11 @@ for privacy in 2 10 50
 do
 for method in "secpe600"
 do
-train_file="${result_folder}/ep05_${method}_new_${privacy}_prefixed.csv"
+train_file="${result_folder}/ep10_${method}_new_${privacy}_prefixed.csv"
 if [ -e "$train_file" ]; then
     echo "$train_file does exist."
 
-    output_dir=${result_folder}/downstream_new_05/${label}_seed${seed}_${method}_${privacy}p/
+    output_dir=${result_folder}/downstream_new_10/${label}_seed${seed}_${method}_${privacy}p/
     if [ -e "${output_dir}test_${num_train_epochs}.0_results.json" ]; then
         echo "${output_dir}test_${num_train_epochs}.0_results.json  does exist. -- SKIP running classification"
     else
