@@ -14,11 +14,11 @@ for privacy in 200 1000 1200 1600 1800
 do
 for method in "rp10"
 do
-train_file="${result_folder}/ep05_${privacy}_prefixed.csv"
+train_file="${result_folder}/ep20_${privacy}_prefixed.csv"
 if [ -e "$train_file" ]; then
     echo "$train_file does exist."
 
-    output_dir=${result_folder}/downstream/${label}_seed${seed}_${method}_K${privacy}/
+    output_dir=${result_folder}/downstream_20/${label}_seed${seed}_${method}_K${privacy}/
     if [ -e "${output_dir}test_${num_train_epochs}.0_results.json" ]; then
         echo "${output_dir}test_${num_train_epochs}.0_results.json  does exist. -- SKIP running classification"
     else
