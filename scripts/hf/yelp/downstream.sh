@@ -4,7 +4,7 @@ result_folder="/content/drive/MyDrive/SecPE/Yelp_different_K"
 ### calculate acc 
 # bash scripts/hf/yelp/downstream.sh
 num_train_epochs=5
-for seed in 0 1 2 3
+for seed in 0 1 2
 do
 for label in "label1" "label2"
 do
