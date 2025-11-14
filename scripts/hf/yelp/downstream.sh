@@ -1,24 +1,24 @@
 cls_batch_size=32
-result_folder="/content/drive/MyDrive/SecPE/Yelp_different_K"
+result_folder="/content/drive/MyDrive/SecPE/yelp_pii_diff"
 
 ### calculate acc 
 # bash scripts/hf/yelp/downstream.sh
 num_train_epochs=5
-for seed in 0 1 2
+for seed in 0 1 2 3
 do
 for label in "label1" "label2"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
-for privacy in 600
+for privacy in 2 10 50
 do
-for method in "rp10"
+for method in "mugdp"
 do
-train_file="/content/drive/MyDrive/SecPE/yelp_epoc20/secpe600_10_prefixed.csv"
+train_file="${result_folder}/ep05_mugdp_${privacy}_prefixed.csv"
 if [ -e "$train_file" ]; then
     echo "$train_file does exist."
 
-    output_dir=${result_folder}/downstream_20/${label}_seed${seed}_${method}_K${privacy}/
+    output_dir=${result_folder}/downstream_new_05/${label}_seed${seed}_${method}_${privacy}p/
     if [ -e "${output_dir}test_${num_train_epochs}.0_results.json" ]; then
         echo "${output_dir}test_${num_train_epochs}.0_results.json  does exist. -- SKIP running classification"
     else
