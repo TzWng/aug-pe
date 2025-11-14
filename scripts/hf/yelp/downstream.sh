@@ -10,11 +10,11 @@ for label in "label1" "label2"
 do
 for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
-for privacy in 200 1000 1200 1600 1800
+for privacy in 600
 do
 for method in "rp10"
 do
-train_file="${result_folder}/ep20_${privacy}_prefixed.csv"
+train_file="yelp_epoc20/secpe${privacy}_10_prefixed.csv"
 if [ -e "$train_file" ]; then
     echo "$train_file does exist."
 
