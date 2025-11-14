@@ -14,7 +14,7 @@ for privacy in 600
 do
 for method in "rp10"
 do
-train_file="/content/drive/MyDrive/SecPE/yelp_epoc20/secpe600_10_prefixed_10_prefixed.csv"
+train_file="/content/drive/MyDrive/SecPE/yelp_epoc20/secpe600_10_prefixed.csv"
 if [ -e "$train_file" ]; then
     echo "$train_file does exist."
 
