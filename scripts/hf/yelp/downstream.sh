@@ -13,7 +13,7 @@ for  (( iter=${num_train_epochs}; iter>=0; iter-- ))
 do
 for privacy in 0
 do
-for method in "secpe"
+for method in "secpe600"
 do
 train_file="${result_folder}/${method}_${privacy}_prefixed.csv"
 if [ -e "$train_file" ]; then
